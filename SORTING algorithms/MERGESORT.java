@@ -2,7 +2,7 @@ import java.util.*;
 /*
  Merge Sort runs O(nlog(n))
  */
-public class Merge {
+public class MERGESORT {
 	//start index s, end index e(exclusive)
 	private static int[] partition(int[] arr,int s,int e)
 	{

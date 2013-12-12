@@ -86,6 +86,7 @@ public class BinaryHeap {
 		//decrement the size
 		store.set(0, store.get(0)-1);
 	}
+	// Remove the minimum element from the heap, runs O(log n)
 	public Integer removeMin()
 	{
 		//if the heap is empty return null
