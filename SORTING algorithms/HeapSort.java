@@ -9,8 +9,4 @@ class HeapSort
 		for(int i=0;i<I.length;i++)
 			I[i]=heap.removeMin();
 	}
-	private static void bottomUpHeap(int[] I)
-	{
-		
-	}
 }

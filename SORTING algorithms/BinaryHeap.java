@@ -154,6 +154,21 @@ public class BinaryHeap {
 		store.set(0, store.get(0)-1);
 		return min;
 	}
+	// Bottom Up Heap construction
+	/*private static ArrayList<Integer> bottomUpHeap(ArrayList S)
+	{
+		if(S.isEmpty())
+			return new ArrayList<Integer>();
+		Integer e = (Integer) S.remove(0);
+		int split_size = (int)(S.size())/2;
+		ArrayList<Integer> L1 = (ArrayList<Integer>) S.subList(0, split_size);
+		ArrayList<Integer> L2 = (ArrayList<Integer>) S.subList(split_size, S.size());
+		ArrayList<Integer> T1 = bottomUpHeap(L1);
+		ArrayList<Integer> T2 = bottomUpHeap(L2);
+		ArrayList<Integer> T = create_binary_tree(e,T1,T2);
+		
+		
+	}*/
 	//simple print method that prints the heap
 	public void print_heap()
 	{
