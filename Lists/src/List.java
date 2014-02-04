@@ -96,5 +96,9 @@ public class List {
 	{
 		return this.num_elements;
 	}
+	public boolean is_empty()
+	{
+		return this.num_elements==0;
+	}
 
 }
