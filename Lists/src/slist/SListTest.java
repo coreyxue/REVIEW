@@ -13,6 +13,7 @@ public class SListTest {
 		my_list.append(2);
 		my_list.append(4);
 		my_list.insert(3, 2);
+		my_list.delete(3);
 		my_list.print();
 	}
 

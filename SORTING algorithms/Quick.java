@@ -62,4 +62,31 @@ public class Quick {
 		temp.addAll(Quicksort_rec(right));
 		return temp;
 	}
+	public static Integer Quick_select(ArrayList<Integer> arr, int k)
+	{
+		if(k<=0||k>arr.size())
+			return null;
+		ArrayList<Integer> mid = new ArrayList<Integer>();
+		ArrayList<Integer> left = new ArrayList<Integer>();
+		ArrayList<Integer> right = new ArrayList<Integer>();
+		Random random = new Random();
+		int pivot_index = random.nextInt(arr.size());
+		Integer pivot = arr.get(pivot_index);
+		
+		for(int i=0;i<arr.size();i++)
+		{
+			if(arr.get(i) > pivot)	
+				right.add(arr.get(i));
+			else if(arr.get(i)<pivot)
+				left.add(arr.get(i));
+			else
+				mid.add(arr.get(i));
+		}
+		if(left.size()>=k)
+			return Quick_select(left,k);
+		else if(k>left.size()+mid.size())
+			return Quick_select(right,k-left.size()-mid.size());
+		else
+			return pivot;
+	}
 }
