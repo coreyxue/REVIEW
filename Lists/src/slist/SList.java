@@ -49,6 +49,7 @@ public class SList {
 				return true;
 			}
 			i++;
+			cur = cur.next;
 		}
 		return false;
 	}
@@ -80,5 +81,15 @@ public class SList {
 	public int size()
 	{
 		return this.length;
+	}
+	public void print()
+	{
+		SListNode temp = this.head;
+		while(temp!=null)
+		{
+			System.out.print(temp.item);
+			System.out.print(" ");
+			temp = temp.next;
+		}
 	}
 }
