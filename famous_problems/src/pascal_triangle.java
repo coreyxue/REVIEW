@@ -1,3 +1,5 @@
+import java.math.BigInteger;
+
 
 public class pascal_triangle {
 	//my version
@@ -55,5 +57,20 @@ public class pascal_triangle {
 		return cur[n];
 		
 	}
+    public int solution(int[] A) {
+        // write your code in Java SE 6
+        BigInteger sum = new BigInteger("0");
+        BigInteger b_point = new BigInteger("0");
+        for(int i=0;i<A.length;i++)
+            sum = sum.add(new BigInteger(""+A[i]));
+        for(int i=A.length-1;i>0;i--){
+            if(sum.subtract(new BigInteger(""+A[i-1]))==new BigInteger(""+b_point))
+                return A[i-1];
+            sum = sum.subtract(new BigInteger(""+A[i]));
+            b_point= b_point.add(new BigInteger(""+A[i]));
+        }
+        return 0;
+    }
 
 }
+
