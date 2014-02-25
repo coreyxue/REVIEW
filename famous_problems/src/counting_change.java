@@ -1,6 +1,6 @@
 import java.util.*;
 public class counting_change {
-	private int[] values = new int[]{1,5,10};
+	private int[] values = new int[]{1,2,5,10};
 	private HashMap<Integer,Integer> dp_map = new HashMap<Integer,Integer>();
 	//number of ways to change n using values, runs in O(values.size^n)
 	public int count(int n)
@@ -37,10 +37,36 @@ public class counting_change {
 	public int change(int n)
 	{
 		if(n<0)
-			return 0;
+			return 99999;
 		if(n==0)
 			return 0;
-		return min(change(n-1)+1,change(n-5)+1);
-		
+		//return min(change(n-1)+1,change(n-5)+1);
+		int min = Integer.MAX_VALUE;
+		for(int v:values)
+		{
+			int temp = change(n-v)+1;
+			if(min>temp)
+				min = temp;
+		}
+		return min;
+	}
+	public int change_dp(int n)
+	{
+		if(n<0)
+			return 99999;
+		if(n==0)
+			return 0;
+		if(this.dp_map.get(n)!=null)
+			return this.dp_map.get(n);
+		//return min(change(n-1)+1,change(n-5)+1);
+		int min = Integer.MAX_VALUE;
+		for(int v:values)
+		{
+			int temp = change(n-v)+1;
+			if(min>temp)
+				min = temp;
+		}
+		this.dp_map.put(n, min);
+		return min;
 	}
 }
