@@ -25,6 +25,26 @@ public class all_subsets {
 		}
 		return result;
 	}
+	//Recursion version, base on P(n-1)+"new_str" = P(n)
+	public ArrayList<String> subsets_recur(ArrayList<String> arr)
+	{
+		ArrayList<String> temp = new ArrayList<String>();
+		if(arr.size()==0)
+		{
+			temp.add("");
+			return temp;
+		}
+		if(arr.size()>0)
+		{
+			String new_str = arr.remove(arr.size()-1);
+			temp = this.subsets_recur(arr);
+			ArrayList<String> with_new_str = new ArrayList<String>();
+			for(String str:temp)
+				with_new_str.add(str+new_str);
+			temp.addAll(with_new_str);
+		}
+		return temp;
+	}
 	
 
 }
