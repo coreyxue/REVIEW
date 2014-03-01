@@ -24,16 +24,16 @@ public class all_permutation {
 	public ArrayList<String> generate_new_elements(String element,char new_element)
 	{
 		ArrayList<String> all_perm = new ArrayList<String>();
-		String temp ="";
+		StringBuffer temp = new StringBuffer();
 		for(int i=0;i<element.length()+1;i++)
 		{
 			for(int j=0;j<i;j++)
-				temp+=element.charAt(j);
-			temp+=new_element;
+				temp.append(element.charAt(j));
+			temp.append(new_element);
 			for(int j=i;j<element.length();j++)
-				temp += element.charAt(j);
-			all_perm.add(temp);
-			temp = "";
+				temp.append(element.charAt(j));
+			all_perm.add(temp.toString());
+			temp.setLength(0);
 		}
 		return all_perm;
 	}
