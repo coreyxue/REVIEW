@@ -4,6 +4,10 @@ import java.util.HashSet;
 
 public class BST {
 	protected TreeNode root;
+	public TreeNode get_root()
+	{
+		return root;
+	}
 	public void construct_tree(TreeNode node)
 	{
 		node.left = new TreeNode(node.data*node.data % 400);
