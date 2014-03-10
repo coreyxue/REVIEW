@@ -4,6 +4,7 @@ import Tree.*;
 public class tree_path {
 	public ArrayList<LinkedList<Integer>> results = new ArrayList<LinkedList<Integer>>();
 	public LinkedList<Integer> one_result = new LinkedList<Integer>();
+	//return all tree pathes from the root
 	public void get_all_path(TreeNode root)
 	{
 		if(root==null)

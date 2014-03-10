@@ -1,7 +1,11 @@
 package Tree;
 import java.util.*;
 public class BinaryTree {
-	public TreeNode root;
+	protected TreeNode root;
+	public TreeNode get_root()
+	{
+		return root;
+	}
 	//insert_node in lv_order
 	public void insert_node(int d)
 	{
